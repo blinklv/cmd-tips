@@ -9,4 +9,9 @@ So just remembering the most useful commands and features, it will help you solv
 99% of the problems, the remaining 1% why not [Google]?
 
 
+## Tips
+
+- [**list the block device information**](list_the_block_device_information.md)
+- [**report information about the cpu**](report_information_about_the_cpu.md)
+
 [Google]: https://www.google.com
