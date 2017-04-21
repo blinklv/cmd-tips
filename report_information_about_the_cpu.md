@@ -1,4 +1,4 @@
-# Report the information about the cpu
+# Report information about the cpu
 
 **lscpu** is used to display information about the CPU architecture, there are  
 few options for this command. I only just introduce the default mode, but the  
