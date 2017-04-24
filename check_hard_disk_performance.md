@@ -25,3 +25,25 @@ $dd if=./input of=/dev/null bs=64k iflag=direct
 209715200 bytes (210 MB) copied, 1.6582 s, 126 MB/s
 ```
 ## Write Speed
+
+**Throughput**
+
+```bash
+$dd if=/dev/zero of=./output bs=100M count=1 oflag=dsync
+
+1+0 records in
+1+0 records out
+104857600 bytes (105 MB) copied, 0.999409 s, 105 MB/s
+```
+
+**Latency**
+
+```bash
+$dd if=/dev/zero of=./output bs=512 count=1000 oflag=dsync
+
+1000+0 records in
+1000+0 records out
+512000 bytes (512 kB) copied, 0.54793 s, 934 kB/s
+```
+
+One thousand accesses required 0.55s, meaning one access took 0.55ms.
