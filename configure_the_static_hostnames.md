@@ -1,6 +1,6 @@
 # Configure the static hostnames
 
-Open the `/etc/hosts` file, you should have permission to edit it.
+Open the `/etc/hosts` file, you should have the root permission to edit it.
 
 ```bash
 $sudo vi /etc/hosts
@@ -10,7 +10,9 @@ This file is a simple text file that associates IP addresses with
 hostnames, one line per IP address. For each host a single line    
 should be present with the following information:
 
-> IP_address canonical_hostname [aliases...]
+```
+IP_address canonical_hostname [aliases...]
+```
 
 **Example:**
 
