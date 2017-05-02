@@ -2,7 +2,7 @@
 
 You can use the **dig** command to achieve it, but the answer   
 is based on domain server you access. If you want to gel all   
-IPs for a domain, sadly, there is no easy to do this.
+IPs for a domain, sadly, there is no easy way to do this.
 
 ## The Basic Format 
 
