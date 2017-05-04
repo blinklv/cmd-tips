@@ -17,5 +17,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**configure the static hostnames**](configure_the_static_hostnames.md)
 - [**get IPs for a given domain**](get_IPs_for_a_given_domain.md)
 - [**static library and dynamic library**](static_library_and_dynamic_library.md)
+- [**mysql dump and restore**](mysql_dump_and_restore.md)
 
 [Google]: https://www.google.com
