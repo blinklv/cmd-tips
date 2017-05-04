@@ -16,5 +16,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**check hard disk performance**](check_hard_disk_performance.md)
 - [**configure the static hostnames**](configure_the_static_hostnames.md)
 - [**get IPs for a given domain**](get_IPs_for_a_given_domain.md)
+- [**static library and dynamic library**](static_library_and_dynamic_library.md)
 
 [Google]: https://www.google.com
