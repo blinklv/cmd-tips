@@ -78,3 +78,11 @@ $ls
 
 add.c  add.o  divide.c  divide.o  libcalc.a  multi.c  multi.o  sub.c  sub.o
 ```
+
+## Dynamic Library
+
+### create dynamic (shared) library
+
+```bash
+$gcc -shared *.o -o libcalc.so
+```
