@@ -18,5 +18,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**get IPs for a given domain**](get_IPs_for_a_given_domain.md)
 - [**static library and dynamic library**](static_library_and_dynamic_library.md)
 - [**mysql dump and restore**](mysql_dump_and_restore.md)
+- [**monitor network connection**](monitor_network_connection.md)
 
 [Google]: https://www.google.com
