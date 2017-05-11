@@ -19,5 +19,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**static library and dynamic library**](static_library_and_dynamic_library.md)
 - [**mysql dump and restore**](mysql_dump_and_restore.md)
 - [**monitor network connection**](monitor_network_connection.md)
+- [**kill all the processes in mysql**](kill_all_the_processes_in_mysql.md)
 
 [Google]: https://www.google.com
