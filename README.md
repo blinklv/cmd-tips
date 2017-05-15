@@ -20,5 +20,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**mysql dump and restore**](mysql_dump_and_restore.md)
 - [**monitor network connection**](monitor_network_connection.md)
 - [**kill all the processes in mysql**](kill_all_the_processes_in_mysql.md)
+- [**test the throughput of a web server**](test_the_throughput_of_a_web_server.md)
 
 [Google]: https://www.google.com
