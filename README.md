@@ -21,5 +21,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**monitor network connection**](monitor_network_connection.md)
 - [**kill all the processes in mysql**](kill_all_the_processes_in_mysql.md)
 - [**test the throughput of a web server**](test_the_throughput_of_a_web_server.md)
+- [**merge two directories**](merge_two_directories.md)
 
 [Google]: https://www.google.com
