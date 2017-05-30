@@ -2,14 +2,14 @@
 
 ## The function of TIME-WAIT
 
-There are tow purposes for the **TIME-WAIT** state:
+There are two purposes for the **TIME-WAIT** state:
 
 1. The most known one is to prevent delayed segments from one connection being accepted   
 by a later connection relying on the same quadruplet (*src addr*, *src port*, *dst addr*, *dst port*).   
 
 2. The other purpose is to ensure the remote end has closed the connection. When the last   
 *ACK* is lost, the remote end stays in the **LAST-ACK** state, opening a new connection  
-with the some quadruplet will not work.
+with some quadruplet will not work.
 
 ## The problems of TIME-WAIT
 
@@ -25,11 +25,11 @@ In fact, the good way to solve it is increasing the one of quadruplet:
 
 1. Use **more client ports** by setting `net.ipv4.ip_local_port_range` to a wider range.
 
-2. Use **more server ports** by asking the server to listen to serveral additional ports.   
+2. Use **more server ports** by asking the server to listen to several additional ports.   
 3. Use **more client IP** by configuring additional IP on the load balancer and use them in a round-robin fashion.
 4. Use **more server IP** by configuring additional IP on the server.
 
-Ok, It's not the theme of this note, because it can't reduce the number of TIME-WAIT state.   
+Ok, It's not the theme of this note because it can't reduce the number of TIME-WAIT state.   
 I will tweak `net.ipv4.tcp_tw_reuse` and `net.ipv4.tcp_tw_recycle` to achieve this goal.
 
 ## tcp_tw_reuse and tcp_tw_recycle 
@@ -47,22 +47,22 @@ technical experts? We need to dig up more valuable information.
 
 
 By enabling this flag, Linux will reuse an existing connection in the **TIME-WAIT** state   
-for a new *outgoint connection* if the new timestamp is strictly bigger than the most   
+for a new *outgoing connection* if the new timestamp is strictly bigger than the most   
 recent timestamp recorded for the previous connection. Thanks to the use of timestamps,  
-a duplicate segments will come with an outdated timestampe and therefore be discarded,  
+a duplicate segments will come with an outdated timestamp and therefore be discarded,  
 we can don't depend on the protection of **TIME-WAIT** state.
 
 ### tcp_tw_recycle
 
-The offical description about this flag as below (from [Linux Documention][tcp_tw_recycle]).
+The official description of this flag as below (from [Linux Documention][tcp_tw_recycle]).
 
 > Enable fast recycling TIME-WAIT sockets. Default value is 0. It should not be changed  
 without advice/request of technical experts.
 
 The detail about this flag is less than last one :joy:. In fact, this mechanism also relies on    
 timestamp option but affects *both incoming and outgoing connections*. It means not only affect   
-client side, but also server side. The principle is similar to **tcp_tw_reuse**. There is a       
-common problem about this flag when you run a server, and server side closes connection actively,    
+client side, but also server-side. The principle is similar to **tcp_tw_reuse**. There is a       
+common problem about this flag when you run a server, and server-side closes connection actively,    
 but the client side is a [**NAT**][NAT] device. some real client (in front of NAT) can't connect to    
 server, because many client use common outbound ip and port through NAT, but they don't share the    
 same timestamp clock, the same ip:port pair doesn't have increasing timestamp from viewport of server,    
