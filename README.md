@@ -22,5 +22,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**kill all the processes in mysql**](kill_all_the_processes_in_mysql.md)
 - [**test the throughput of a web server**](test_the_throughput_of_a_web_server.md)
 - [**merge two directories**](merge_two_directories.md)
+- [**reduce the number of TIME-WAIT socket**](reduce_the_number_of_TIME_WAIT_socket.md)
 
 [Google]: https://www.google.com
