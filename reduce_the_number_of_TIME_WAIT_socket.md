@@ -37,9 +37,9 @@ I will tweak `net.ipv4.tcp_tw_reuse` and `net.ipv4.tcp_tw_recycle` to achieve th
 Before I introduce these two system flags, you should know about [TCP Timestamps Option].   
 It can help TCP determine in which order packets are sent.
 
-**tcp_tw_reuse**
+### tcp_tw_reuse
 
-> Allow to reuse TIME-WAIT sockets for new connection when it is safe from protocol viewpoint.
+> Allow to reuse TIME-WAIT sockets for new connection when it is safe from protocol viewpoint.    
 Default value is 0. It should not be changed without advice/request of technical experts.
 
 This description is from [Linux Documentation][tcp_tw_reuse]. What's the advice/request of  
@@ -52,7 +52,7 @@ recent timestamp recorded for the previous connection. Thanks to the use of time
 a duplicate segments will come with an outdated timestampe and therefore be discarded,  
 we can don't depend on the protection of **TIME-WAIT** state.
 
-**tcp_tw_recycle**
+### tcp_tw_recycle
 
 The offical description about this flag as below (from [Linux Documention][tcp_tw_recycle]).
 
@@ -61,15 +61,26 @@ without advice/request of technical experts.
 
 The detail about this flag is less than last one :joy:. In fact, this mechanism also relies on    
 timestamp option but affects *both incoming and outgoing connections*. It means not only affect   
-client side, but also server side. The principle is similar to **tcp_tw_reuse**. There is a 
+client side, but also server side. The principle is similar to **tcp_tw_reuse**. There is a       
 common problem about this flag when you run a server, and server side closes connection actively,    
-but the client side is a [**NAT**] device. some real client (in front of NAT) can't   
-connect to server, because many client use common outbound ip and port through NAT, but they  
-don't share the same timestamp clock, the same ip:port pair doesn't have increasing timestamp from viewport of server,    
-the *SYN* packet will be silently dropped, and the connection won't establish (you will see an error similar to **connect timeout**).
+but the client side is a [**NAT**][NAT] device. some real client (in front of NAT) can't connect to    
+server, because many client use common outbound ip and port through NAT, but they don't share the    
+same timestamp clock, the same ip:port pair doesn't have increasing timestamp from viewport of server,    
+the *SYN* packet will be silently dropped, and the connection won't establish (you will see an    
+error similar to **connect timeout**).
+
+## Enable these two flags
+
+```bash
+$sudo echo 1 > /proc/sys/net/ipv4/tcp_tw_reuse
+$sudo echo 1 > /proc/sys/net/ipv4/tcp_tw_recycle
+```
+
+You should ensure that the **tcp_timestamps** flag has been set. You only need to set either **tcp_tw_reuse**   
+or **tcp_tw_recycle**, not both.
 
 
-[TCP Timestamps Options]: https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_timestamps
+[TCP Timestamps Option]: https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_timestamps
 [tcp_tw_reuse]: http://lxr.linux.no/linux+v3.2.8/Documentation/networking/ip-sysctl.txt#L464
 [tcp_tw_recycle]: http://lxr.linux.no/linux+v3.2.8/Documentation/networking/ip-sysctl.txt#L459
 [NAT]: https://en.wikipedia.org/wiki/Network_address_translation
