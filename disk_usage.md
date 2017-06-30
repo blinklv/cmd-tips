@@ -1,5 +1,7 @@
 # Disk usage
 
+Introduce **df (disk filesystem)** command and **du (disk usage)** command.
+
 ## Check file system disk space usage
 
 The **df** command displays the information of device name, total blocks, total   
