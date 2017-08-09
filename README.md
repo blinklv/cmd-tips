@@ -26,5 +26,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**get the sizes of the tables of mysql**](get_the_sizes_of_the_tables_of_mysql.md)
 - [**sysbench**](sysbench.md)
 - [**disk usage**](disk_usage.md)
+- [**generating RSA key**](generating_rsa_key.md)
 
 [Google]: https://www.google.com
