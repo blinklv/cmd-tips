@@ -27,5 +27,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**sysbench**](sysbench.md)
 - [**disk usage**](disk_usage.md)
 - [**generating RSA key**](generating_rsa_key.md)
+- [**nmap**](nmap.md)
 
 [Google]: https://www.google.com
