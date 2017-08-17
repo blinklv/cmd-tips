@@ -48,11 +48,11 @@ Nmap done: 1 IP address (1 host up) scanned in 4.58 seconds
 **Scan multiple IP address or subnet**
 
 ```bash
-nmap 192.168.1.1 192.168.1.2 192.168.1.3
-nmap 192.168.1.1,2,3    
-nmap 192.168.1.1-20   
-nmap 192.168.1.&lowast;     
-nmap 192.168.1.0/24     
+$nmap 192.168.1.1 192.168.1.2 192.168.1.3
+$nmap 192.168.1.1,2,3    
+$nmap 192.168.1.1-20   
+$nmap 192.168.1.&lowast;     
+$nmap 192.168.1.0/24     
 ```
 
 **Read list of hosts/networks froma a file**    
@@ -60,12 +60,12 @@ nmap 192.168.1.0/24
 This is useful to scan a large number of hosts/networks.
 
 ```bash
-nmap -iL /tmp/ip.txt
+$nmap -iL /tmp/ip.txt
 ```
 
-**Excluding hosts/networks
+**Excluding hosts/networks**
 
 ```bash
-nmap 192.168.1.0/24 --exclude 192.168.1.5,192.168.1.254
-nmap -iL /tmp/ip.txt --excludefile /tmp/exclude.txt
+$nmap 192.168.1.0/24 --exclude 192.168.1.5,192.168.1.254
+$nmap -iL /tmp/ip.txt --excludefile /tmp/exclude.txt
 ```
