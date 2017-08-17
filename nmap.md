@@ -51,7 +51,7 @@ Nmap done: 1 IP address (1 host up) scanned in 4.58 seconds
 $nmap 192.168.1.1 192.168.1.2 192.168.1.3
 $nmap 192.168.1.1,2,3    
 $nmap 192.168.1.1-20   
-$nmap 192.168.1.&lowast;     
+$nmap 192.168.1.\*
 $nmap 192.168.1.0/24     
 ```
 
