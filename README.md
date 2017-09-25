@@ -28,5 +28,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**disk usage**](disk_usage.md)
 - [**generating RSA key**](generating_rsa_key.md)
 - [**nmap**](nmap.md)
+- [**routing loop**](routing_loop.md)
 
 [Google]: https://www.google.com
