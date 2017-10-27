@@ -29,5 +29,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**generating RSA key**](generating_rsa_key.md)
 - [**nmap**](nmap.md)
 - [**routing loop**](routing_loop.md)
+- [**replace text in multiple files**](replace_text_in_multiple_files.md)
 
 [Google]: https://www.google.com
