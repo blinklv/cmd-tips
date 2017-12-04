@@ -30,5 +30,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**nmap**](nmap.md)
 - [**routing loop**](routing_loop.md)
 - [**replace text in multiple files**](replace_text_in_multiple_files.md)
+- [**too many open files**](too_many_open_files.md)
 
 [Google]: https://www.google.com
