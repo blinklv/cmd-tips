@@ -1,13 +1,13 @@
 # Extract IP from ngrep
 
 Sometimes, A sudden increase in the amount of request to your HTTP server.  Maybe some clients have a loop bug, new business online or some people attack your server etc.
-I think analyze request ip addresses is a good choice to solve this problem. But your HTTP server doesn't record access log, you don't have information about request.
+I think to analyze request ip addresses is a good choice to solve this problem. But your HTTP server doesn't record access log, you don't have information about the request.
 OK, let's spot capture request packages and extract ip addresses to analyze.
 
 ## First Case
 
 Yes, there're not access proxies server in front of your HTTP server, the requests come from clients directly. The ip addresses you need to extract are remote addresses.
-I just use the simplest regular expressiion (a single `HTTP` string) and filter (destination port 80) in **ngrep** command to demonstrate this process, you can modify 
+I just use the simplest regular expression (a single `HTTP` string) and filter (destination port 80) in **ngrep** command to demonstrate this process, you can modify 
 them based on your needs.
 
 ```bash
@@ -16,7 +16,7 @@ sudo ngrep -d any -W byline -q 'HTTP' 'dst port 80' | sed  -rn 's/^T (([0-9]{1,3
 
 ## Second Case
 
-If some access proxies are downstream of your HTTP server, so the remote addresses are host of proxies. We can extract client ip addresses from HTTP header `X-Real-IP`.
+If some access proxies are downstream of your HTTP server, so the remote addresses are the host of proxies. We can extract client ip addresses from HTTP header `X-Real-IP`.
 
 ```bash
 sudo ngrep -d any -W byline -q 'HTTP' 'dst port 80' | sed  -rn 's/^X-Real-IP: (([0-9]{1,3}\.){3}[0-9]{1,3}).*$/\1/p'
