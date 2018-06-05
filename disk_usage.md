@@ -100,3 +100,32 @@ $ du -ah .
 4.0K  ./ugrade_after.sh
 14M .
 ```
+
+Maybe you don't want to display the disk usage recursively, you can use `--max-depth` option. 
+
+```bash
+$ du -h --max-depth=1 .
+
+ 68K./vim
+2.4M./note
+5.8M./py
+1.2G./go
+ 11M./css
+411M./js
+172M./web
+ 24K./script
+112M./c
+1.9G.
+```
+
+## Find the biggest N files and directories of a directory in Linux.
+
+```bash
+$ du --max-depth=1 /Devel | sort -nr | head -n 5
+
+4010632.
+2547592./go
+841056./js
+353080./web
+229080./c
+``` 
