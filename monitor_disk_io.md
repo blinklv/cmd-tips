@@ -35,4 +35,54 @@ Total DISK READ: 0.00 B/s | Total DISK WRITE: 0.00 B/s
 14354 be/4 root          0.00 B     84.00 K  0.00 %  0.00 % TsysProxy
 ```
 
+
+### iostat
+
+[iostat][] can report CPU statistics and input/output statistics for devices, partitions and NFS, but I only introduce the following way to report I/O statistics periodically (every 1 second).
+
+```bash
+$ iostat -xdm 1
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.12   108.21    0.45   17.39     0.00     0.49    56.83     0.00    2.52   1.16   2.06
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               3.00    61.00   45.00    4.00     0.19     0.25    18.45     0.96   19.59   1.31   6.40
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.00    34.00    0.00    3.00     0.00     0.14    98.67     0.00    1.33   1.33   0.40
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.00    35.00    0.00   12.00     0.00     0.18    31.33     0.00    0.00   0.00   0.00
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.00     7.00    0.00   11.00     0.00     0.07    13.09     0.02    1.82   0.73   0.80
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.00    75.00    0.00    2.00     0.00     0.30   308.00     0.00    0.00   0.00   0.00
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.00    45.00    0.00    4.00     0.00     0.19    98.00     0.00    1.00   1.00   0.40
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.00  2067.00    0.00  143.00     0.00     8.53   122.18     7.26   43.69   1.01  14.40
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.00     0.00    0.00    8.00     0.00     0.13    34.00     0.06  133.00   2.00   1.60
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rMB/s    wMB/s avgrq-sz avgqu-sz   await  svctm  %util
+sda               0.00    77.00    0.00    4.00     0.00     0.32   162.00     0.00    1.00   1.00   0.40
+```
+
 [iotop]: https://linux.die.net/man/1/iotop
+[iostat]: https://linux.die.net/man/1/iostat
+
