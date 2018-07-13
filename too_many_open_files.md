@@ -59,3 +59,7 @@ $ lsof -p ($pidof process_name) | grep 'CLOSE_WAIT' -c
 ```
 
 I spot checked my codes, as I think, I forget closing connections.
+
+**TIP**
+
+Add `-n` and `-P` options can print numeric addresses and ports respectively.
