@@ -32,5 +32,6 @@ So just remembering the most useful commands and features, it will help you solv
 - [**replace text in multiple files**](replace_text_in_multiple_files.md)
 - [**too many open files**](too_many_open_files.md)
 - [**extract ip from ngrep**](extract_ip_from_ngrep.md)
+- [**monitor disk io**](monitor_disk_io.md)
 
 [Google]: https://www.google.com
